@@ -1,0 +1,12 @@
+FROM jupyter/minimal-notebook:latest
+USER root
+RUN pip install --no-cache-dir --upgrade \
+    pip \
+    "sqlalchemy>=2.0.36" \
+    psycopg2-binary \
+    redis \
+    pandas \
+    matplotlib \
+    seaborn \
+    requests
+USER ${NB_UID}
